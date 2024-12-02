@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="hijau_tosca">#2D957B</color>
+    <color name="hijau_tua">#1B4242</color>
+    <color name="white_opacity">#33FFFFFF</color>
+</resources>

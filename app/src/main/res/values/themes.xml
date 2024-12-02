@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AnggarIn" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/hijau_tua</item>
+    </style>
+
+    <style name="Theme.AnggarIn" parent="Base.Theme.AnggarIn" />
+</resources>
