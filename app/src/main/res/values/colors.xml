@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hijau_tosca">#2D957B</color>
+    <color name="abu_muda">#B9B7B7</color>
+    <color name="biru_sedang">#206EE3</color>
+    <color name="putih_abuabu">#D6D4D4</color>
+    <color name="merah">#DC4848</color>
+    <color name="hijau_tua">#1B4242</color>
 </resources>

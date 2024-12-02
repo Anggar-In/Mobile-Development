@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.VerifikasiActivity">
+
+    <ImageView
+        android:id="@+id/iv_btn_back_verifikasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/btn_back"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_text_verifikasi_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_verifikasi_1"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_btn_back_verifikasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_text_verifikasi_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_verifikasi_2"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_text_verifikasi_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_input_verifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:inputType="number"
+        android:hint="@string/nomor_verifikasi"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_text_verifikasi_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_kirim_ulang"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="@string/kirim_ulang"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284"
+        app:strokeColor="@color/hijau_tosca" />
+
+    <TextView
+        android:id="@+id/txt_wajib_diisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wajib_diisi"
+        android:textStyle="italic"
+        android:textColor="@color/abu_muda"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_input_verifikasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_verifikasi"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_marginTop="30dp"
+        android:text="@string/verifikasi"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txt_wajib_diisi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_salah_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="@string/txt_verifikasi_3"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_verifikasi" />
+
+    <TextView
+        android:id="@+id/txt_ganti_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ganti_email"
+        android:textColor="@color/biru_sedang"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
