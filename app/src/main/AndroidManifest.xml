@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".BudgetingActivity"></activity>
+        <activity android:name=".PengeluaranActivity"></activity>
     </application>
 
 </manifest>

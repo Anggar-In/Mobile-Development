@@ -32,7 +32,7 @@
                 android:layout_width="140dp"
                 android:layout_height="61dp"
                 android:layout_marginTop="170dp"
-                android:layout_marginStart="33dp"
+                android:layout_marginStart="40dp"
                 app:cardBackgroundColor="@color/white_opacity"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="20dp">
@@ -41,7 +41,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="140dp"
                 android:layout_height="61dp"
-                android:layout_marginLeft="220dp"
+                android:layout_marginLeft="230dp"
                 android:layout_marginTop="170dp"
                 app:cardBackgroundColor="@color/white_opacity"
                 app:cardCornerRadius="20dp"
