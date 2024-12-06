@@ -28,6 +28,39 @@
             app:cardElevation="4dp"
             app:cardCornerRadius="20dp">
 
+            <TextView
+                android:id="@+id/saldoatas"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginLeft="161dp"
+                android:layout_marginTop="63dp"
+                android:layout_gravity="top|left"
+                android:gravity="center_horizontal|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="saldo"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/saldoangka"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginLeft="161dp"
+                android:layout_marginTop="90dp"
+                android:layout_gravity="top|left"
+                android:gravity="center_horizontal|center_vertical"
+                app:layout_constraintTop_toBottomOf="@+id/saldoatas"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Rp.0"
+                android:textColor="#FFFFFFFF"
+                android:textSize="24sp" />
+
             <androidx.cardview.widget.CardView
                 android:layout_width="140dp"
                 android:layout_height="61dp"
@@ -36,6 +69,49 @@
                 app:cardBackgroundColor="@color/white_opacity"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                <!-- Teks Pengeluaran di atas -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengeluaran"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+
+                <!-- LinearLayout horizontal untuk teks "Rp.0" dan ikon panah ke bawah -->
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <!-- Ikon panah ke bawah -->
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/pengeluaran_ic"/> <!-- Ganti dengan nama file ikon panah -->
+
+                    <!-- Teks Rp.0 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp.0"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -45,7 +121,50 @@
                 android:layout_marginTop="170dp"
                 app:cardBackgroundColor="@color/white_opacity"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="4dp"></androidx.cardview.widget.CardView>
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <!-- Teks Pengeluaran di atas -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pemasukan "
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:gravity="center"/>
+
+                    <!-- LinearLayout horizontal untuk teks "Rp.0" dan ikon panah ke bawah -->
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <!-- Ikon panah ke bawah -->
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/pemasukan_ic"/> <!-- Ganti dengan nama file ikon panah -->
+
+                        <!-- Teks Rp.0 -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp.0"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:gravity="center"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
 
