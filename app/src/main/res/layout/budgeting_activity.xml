@@ -123,11 +123,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_anggaran"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
         <!-- Teks Sisa Budget -->
         <TextView
             android:id="@+id/textSisaBudget"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sisa Budget"
@@ -140,6 +142,7 @@
             android:id="@+id/textAngkaSisaBudget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:text="Rp.1.500.000"
             android:textSize="16sp"
             android:textColor="@color/white"
@@ -147,6 +150,8 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -158,6 +163,7 @@
             android:id="@+id/textTerpakai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:text="Terpakai Rp.100.000/Rp.2.000.000"
             android:textSize="14sp"
             android:textColor="@color/white"

@@ -79,6 +79,7 @@
         android:textSize="36dp" />
 
     <ImageView
+        android:id="@+id/buttonSaveTransaction"
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:layout_gravity="top|left"
@@ -306,7 +307,12 @@
             android:background="@drawable/shape"
             android:scaleType="centerCrop" />
 
+
+        <!-- TextView untuk menunjukkan tanggal yang dipilih -->
+
+
         <TextView
+            android:id="@+id/textViewDate"
             android:layout_width="74.15dp"
             android:layout_height="18dp"
             android:layout_marginLeft="28dp"
@@ -317,11 +323,12 @@
             android:includeFontPadding="false"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="14, Okt 2024"
+            android:text="Tanggal: Belum dipilih"
             android:textColor="#FFFFFFFF"
             android:textSize="12dp" />
 
         <ImageView
+            android:id="@+id/buttonSelectDate"
             android:layout_width="15.89dp"
             android:layout_height="15dp"
             android:layout_marginLeft="109.1dp"
@@ -330,6 +337,7 @@
             android:layout_marginBottom="10dp"
             android:scaleType="centerInside"
             app:tint="@color/white"
+            android:text="Pilih Tanggal"
             android:src="@drawable/baseline_calendar_month_24" />
     </FrameLayout>
 
