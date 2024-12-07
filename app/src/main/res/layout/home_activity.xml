@@ -67,7 +67,7 @@
                 android:layout_marginTop="170dp"
                 android:layout_marginStart="40dp"
                 app:cardBackgroundColor="@color/white_opacity"
-                app:cardElevation="4dp"
+
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -121,7 +121,7 @@
                 android:layout_marginTop="170dp"
                 app:cardBackgroundColor="@color/white_opacity"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="4dp">
+                >
 
                 <LinearLayout
                     android:orientation="vertical"
