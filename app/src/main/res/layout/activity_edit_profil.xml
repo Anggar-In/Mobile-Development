@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/hijau_tosca"
+    android:background="@drawable/background_anggar"
     android:orientation="vertical"
     tools:context=".ui.profil.EditProfilActivity">
 
@@ -14,23 +14,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:background="@drawable/background_putih"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.500"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            tools:ignore="contentDescription" />
-
-        <ImageView
             android:id="@+id/img_btn_back_edit_profile"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"
@@ -40,11 +28,11 @@
             android:id="@+id/txt_edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
             android:text="@string/edit_profile"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -52,15 +40,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/img_edit_profile"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:src="@drawable/img_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_edit_profile"
+            app:shapeAppearanceOverlay="@style/circularImageView"
+            android:scaleType="centerCrop"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -68,63 +58,47 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/icon_edit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.620"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.240"
+            app:layout_constraintBottom_toBottomOf="@id/img_edit_profile"
+            app:layout_constraintEnd_toEndOf="@id/img_edit_profile"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/img_edit_profile"
+            app:layout_constraintTop_toTopOf="@id/img_edit_profile"
+            app:layout_constraintVertical_bias="1.0"
             tools:ignore="contentDescription" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215">
+            app:layout_constraintTop_toBottomOf="@id/img_edit_profile"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/txt_nama_edit_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nama"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.296" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_nama"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
+            <EditText
+                android:id="@+id/edt_nama_edit_profile"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:background="@drawable/backround_input"
+                android:hint="@string/masukkan_nama"
+                android:inputType="text"
+                android:importantForAutofill="no"
+                android:textSize="12sp"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_nama_edit_profile">
+                app:layout_constraintTop_toBottomOf="@id/txt_nama_edit_profile"/>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_nama_edit_profile"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:hint="@string/masukkan_nama"
-                    android:textSize="15sp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/txt_email_edit_profile"
@@ -132,31 +106,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/email"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/input_layout_nama" />
+                app:layout_constraintTop_toBottomOf="@id/edt_nama_edit_profile" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_email"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_email_edit_profile">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/edt_email_edit_profile"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="@string/masukkan_email"
-                    android:textSize="15sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:inputType="textEmailAddress"
+                    android:importantForAutofill="no"
+                    android:textSize="12sp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:background="@drawable/backround_input"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_email_edit_profile"/>
 
             <TextView
                 android:id="@+id/txt_nomorhp_edit_profile"
@@ -164,31 +131,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/nomor_hp"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/input_layout_email" />
+                app:layout_constraintTop_toBottomOf="@id/edt_email_edit_profile" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_nomorhp"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_nomorhp_edit_profile">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/edt_nomorhp_edit_profile"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="@string/masukkan_nomorhp"
-                    android:textSize="15sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:inputType="number"
+                    android:importantForAutofill="no"
+                    android:textSize="12sp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:background="@drawable/backround_input"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_nomorhp_edit_profile"/>
 
             <TextView
                 android:id="@+id/txt_tgllahir_edit_profile"
@@ -196,58 +155,47 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/tanggal_lahir"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/input_layout_nomorhp" />
+                app:layout_constraintTop_toBottomOf="@id/edt_nomorhp_edit_profile" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/input_layout_tgllahir"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_tgllahir_edit_profile">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/edt_tgllahir_edit_profile"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:cursorVisible="false"
-                    android:focusable="false"
                     android:hint="@string/MM_DD_YY"
-                    android:textSize="15sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:textSize="12sp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp"
+                    android:background="@drawable/backround_input"
+                    app:layout_constraintTop_toBottomOf="@id/txt_tgllahir_edit_profile"
+                    app:layout_constraintStart_toStartOf="parent"/>
 
             <ImageView
                 android:id="@+id/btn_kalender"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginStart="160dp"
                 android:src="@drawable/outline_calendar_month_24"
-                app:layout_constraintBottom_toBottomOf="@id/input_layout_tgllahir"
+                app:layout_constraintBottom_toBottomOf="@id/edt_tgllahir_edit_profile"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/input_layout_tgllahir"
+                app:layout_constraintTop_toTopOf="@id/edt_tgllahir_edit_profile"
                 tools:ignore="contentDescription" />
 
             <Button
                 android:id="@+id/btn_simpan_edit_profile"
-                android:layout_width="140dp"
+                android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="60dp"
                 android:text="@string/simpan"
-                android:textSize="18sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:cornerRadius="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/input_layout_tgllahir" />
+                app:layout_constraintTop_toBottomOf="@id/edt_tgllahir_edit_profile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

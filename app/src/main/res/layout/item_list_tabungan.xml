@@ -8,7 +8,7 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="50dp"
-    android:backgroundTint="@color/hijau_tosca"
+    android:backgroundTint="@color/hijau_lagi"
     app:cardCornerRadius="15dp">
 
     <LinearLayout
@@ -20,11 +20,11 @@
 
         <TextView
             android:id="@+id/txt_nama_tabungan"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/nama_tabungan"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -33,15 +33,16 @@
             android:layout_height="wrap_content"
             android:text="@string/target_capaian"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="11sp"
             android:textStyle="italic" />
 
         <ProgressBar
             android:id="@+id/pb_target_tabungan"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="15dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:max="100"
             android:progress="50"
             android:progressDrawable="@drawable/target_bar_tabungan" />
@@ -65,7 +66,7 @@
                 android:id="@+id/txt_target_tabungan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="100dp"
                 android:text="@string/target_tabungan"
                 android:textSize="11sp"
                 android:textColor="@color/white"/>

@@ -1,21 +1,31 @@
 package com.example.anggarin.ui.tabungan
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.anggarin.R
+import com.example.anggarin.databinding.ActivityTabunganBinding
 
-class TabunganActivity : AppCompatActivity() {
+class TabunganActivity : AppCompatActivity(), View.OnClickListener {
+
+    private lateinit var binding: ActivityTabunganBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_tabungan)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityTabunganBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.fabTambahTabungan.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.fab_tambah_tabungan -> {
+                startActivity(Intent(this, InputTabunganActivity::class.java))
+                @Suppress("DEPRECATION")
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            }
         }
     }
 }
