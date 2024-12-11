@@ -92,4 +92,6 @@
     <string name="five_years_return">5 Year Price Returns (%)</string>
     <string name="dividend_yield">Dividend Yield (%)</string>
     <string name="payout_ratio">Payout Ratio (%)</string>
+    <string name="jangkainvestasi">Jangka investasi</string>
+    <string name="budgeting">Budgeting</string>
 </resources>

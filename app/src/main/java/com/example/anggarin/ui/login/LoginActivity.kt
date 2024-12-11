@@ -8,7 +8,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.anggarin.MainActivity
 import com.example.anggarin.R
+import com.example.anggarin.ViewModelFactory
 import com.example.anggarin.data.Result
+import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.databinding.ActivityLoginBinding
 import com.example.anggarin.ui.profil.ProfilActivity
 import com.example.anggarin.ui.register.RegisterActivity
@@ -18,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     private val loginViewModel: LoginViewModel by viewModels {
-        ViewModelFactory(applicationContext)
+        ViewModelFactory(UserPreference(applicationContext))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +32,6 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginResult.observe(this) { result ->
             when (result) {
                 is Result.Result.Success -> {
-                    // Navigasi ke VerifikasiActivity dengan membawa email
                     val intent = Intent(this, ProfilActivity::class.java).apply {
                         putExtra("EMAIL", binding.edtEmailLogin.text.toString().trim())
                     }

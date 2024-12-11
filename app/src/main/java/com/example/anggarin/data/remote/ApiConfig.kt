@@ -1,6 +1,7 @@
 package com.example.anggarin.data.remote
 
 import android.content.Context
+import android.util.Log
 import com.example.anggarin.data.pref.UserPreference
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -20,6 +21,7 @@ class ApiConfig () {
             val authInterceptor = Interceptor { chain ->
                 val userPreference = UserPreference(context)
                 val token = runBlocking { userPreference.getToken().first() } // Synchronously get token
+                Log.d("Token", "Token is: $token")
 
                 val request = if (!token.isNullOrEmpty()) {
                     chain.request().newBuilder()

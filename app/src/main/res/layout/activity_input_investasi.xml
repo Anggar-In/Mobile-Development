@@ -106,6 +106,33 @@
         app:layout_constraintTop_toTopOf="@id/edt_input_dana_kebebasan_finansial"
         app:layout_constraintBottom_toBottomOf="@id/edt_input_dana_kebebasan_finansial"/>
 
+    <TextView
+        android:id="@+id/txt_jangkainvestasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jangkainvestasi"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/edt_input_dana_kebebasan_finansial"
+        app:layout_constraintStart_toStartOf="@id/edt_input_dana_kebebasan_finansial" />
+
+    <EditText
+        android:id="@+id/edt_jangkainvestasi"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:textSize="12sp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:labelFor="@id/edt_input_dana_kebebasan_finansial"
+        android:importantForAccessibility="no"
+        android:importantForAutofill="no"
+        android:background="@drawable/backround_input"
+        app:layout_constraintTop_toBottomOf="@id/txt_jangkainvestasi"
+        app:layout_constraintStart_toStartOf="@id/txt_jangkainvestasi"
+        />
+
     <Button
         android:id="@+id/btn_hitung_investasi"
         android:layout_width="180dp"

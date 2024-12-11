@@ -9,13 +9,17 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.anggarin.MainActivity
 import com.example.anggarin.R
+import com.example.anggarin.ViewModelFactory
 import com.example.anggarin.data.Result
+import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.databinding.ActivityRegisterBinding
 import com.example.anggarin.ui.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
-    private val registerViewModel: RegisterViewModel by viewModels()
+    private val registerViewModel: RegisterViewModel by viewModels{
+        ViewModelFactory(UserPreference(applicationContext))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +32,6 @@ class RegisterActivity : AppCompatActivity() {
                 is Result.Result.Success -> {
                     // Navigasi ke VerifikasiActivity dengan membawa email
                     val intent = Intent(this, VerifikasiActivity::class.java).apply {
-                        putExtra("NAMA", binding.edtNamaRegister.text.toString().trim())
                         putExtra("EMAIL", binding.edtEmailRegister.text.toString().trim())
                     }
                     startActivity(intent)

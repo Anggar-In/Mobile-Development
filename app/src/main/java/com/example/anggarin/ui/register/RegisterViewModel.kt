@@ -5,12 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.anggarin.data.Result.Result
+import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.data.remote.ApiConfig
 import com.example.anggarin.data.response.RegisterRequest
 import com.example.anggarin.data.response.RegisterResponse
 import kotlinx.coroutines.launch
 
-class RegisterViewModel : ViewModel() {
+class RegisterViewModel(private val pref: UserPreference) : ViewModel() {
     private val _registrationResult = MutableLiveData<Result<RegisterResponse>>()
     val registrationResult: LiveData<Result<RegisterResponse>> = _registrationResult
 
@@ -50,7 +51,9 @@ class RegisterViewModel : ViewModel() {
                 Log.i(TAG, "isSuccessful ${response.isSuccessful}")
                 if (response.isSuccessful) {
                     Log.i(TAG, "onResponse: ${response.body()}")
+
                     val registerResponse = response.body()
+                    pref.saveUserData(nama, email)
                     _registrationResult.postValue(Result.Success(registerResponse!!))
                 } else {
                     val errorBody = response.errorBody()?.string()

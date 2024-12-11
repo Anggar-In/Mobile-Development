@@ -1,11 +1,13 @@
 [versions]
 activityKtx = "1.6.1"
 agp = "8.7.0"
+compiler = "4.12.0"
 converterGson = "2.11.0"
 datastore = "1.1.1"
 datastoreCore = "1.0.0"
 datastorePreferences = "1.0.0"
 fragmentKtx = "1.8.5"
+glide = "4.16.0"
 kotlin = "1.9.24"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -36,7 +38,9 @@ androidx-datastore-datastore-preferences = { module = "androidx.datastore:datast
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences" }
 androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "fragmentKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
 datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }

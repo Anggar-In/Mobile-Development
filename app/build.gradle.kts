@@ -80,6 +80,10 @@ dependencies {
     implementation(libs.androidx.datastore)
     implementation(libs.androidx.datastore.datastore.preferences)
 
+    //glide
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+
 
 
 }

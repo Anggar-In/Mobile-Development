@@ -36,11 +36,15 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
 
                     // Simpan token jika tersedia
                     val token = loginResponse?.token
-                    if (!token.isNullOrEmpty()) {
+                    val name = loginResponse?.user?.name
+                    val email = loginResponse?.user?.email
+                    if (!token.isNullOrEmpty() && !name.isNullOrEmpty() && !email.isNullOrEmpty()) {
+                        // Save token, name, and email to UserPreference
                         pref.saveToken(token)
+                        pref.saveUserData(name, email)
                         _loginResult.postValue(Result.Result.Success(loginResponse))
                     } else {
-                        _loginResult.postValue(Result.Result.Error("Token tidak tersedia"))
+                        _loginResult.postValue(Result.Result.Error("data login tidak lengkap"))
                     }
                 } else {
                     val errorBody = response.errorBody()?.string()
