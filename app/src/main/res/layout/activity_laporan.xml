@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_anggarin" />
+
+    <LinearLayout
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/page_name"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="90dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:src="@drawable/baseline_arrow_back_ios_24">
+        </ImageView>
+        <TextView
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Laporan">
+
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/bulan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_name"
+        android:layout_marginStart="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="November 2024">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/kategori_laporan"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bulan"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:weightSum="3"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_marginEnd="8dp"
+            android:layout_width="90dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:background="@drawable/border"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:gravity="center_vertical|center_horizontal"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Harian"
+                android:textColor="#FF000000"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="90dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:gravity="center_vertical|center_horizontal"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Mingguan"
+                android:textColor="#FF000000"
+                android:textSize="8dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginStart="8dp"
+            android:layout_width="90dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:layout_gravity="end"
+            android:background="@drawable/border"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:gravity="center_vertical|center_horizontal"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Bulanan"
+                android:textColor="#FF000000"
+                android:textSize="8dp" />
+        </FrameLayout>
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/laporan_bar"
+        app:layout_constraintTop_toBottomOf="@+id/kategori_laporan"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="Belum ada laporan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+    
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/keuangan"
+        app:layout_constraintTop_toBottomOf="@+id/laporan_bar"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="left|center"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="133dp"
+            app:cardBackgroundColor="@color/merah_opacity"
+            android:layout_height="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"> <!-- Mengatur teks agar berada di tengah secara horizontal -->
+
+                <!-- TextView pertama di atas -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pengeluaran"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:gravity="center" /> <!-- Teks akan berada di tengah secara horizontal -->
+
+                <!-- TextView kedua di bawah -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.0"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center" /> <!-- Teks akan berada di tengah secara horizontal -->
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="right|center"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_width="133dp"
+            app:cardBackgroundColor="@color/hijau_opacity"
+            android:layout_height="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"> <!-- Mengatur teks agar berada di tengah secara horizontal -->
+
+                <!-- TextView pertama di atas -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pemasukan"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:gravity="center" /> <!-- Teks akan berada di tengah secara horizontal -->
+
+                <!-- TextView kedua di bawah -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.0"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center" /> <!-- Teks akan berada di tengah secara horizontal -->
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/kas"
+        app:layout_constraintTop_toBottomOf="@+id/keuangan"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Arus kas bulan ini"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kas"
+        android:id="@+id/piechart_kosong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/empty_pie">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/kategori"
+        app:layout_constraintTop_toBottomOf="@+id/piechart_kosong"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Kategori pengeluaran terbanyak"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:id="@+id/pengeluaran_terbanyak"
+        app:layout_constraintTop_toBottomOf="@+id/kategori"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="-"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
