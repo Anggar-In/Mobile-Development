@@ -12,6 +12,7 @@ import com.example.anggarin.ViewModelFactory
 import com.example.anggarin.data.Result.Result
 import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.databinding.ActivityProfilBinding
+import com.example.anggarin.ui.home.HomeActivity
 import com.example.anggarin.ui.login.LoginActivity
 
 class ProfilActivity : AppCompatActivity() {
@@ -57,6 +58,11 @@ class ProfilActivity : AppCompatActivity() {
             }
         }
 
+        binding.imgBtnBackProfil.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+            @Suppress("DEPRECATION")
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
 
         binding.btnEditProfile.setOnClickListener {
             startActivity(Intent(this, EditProfilActivity::class.java))

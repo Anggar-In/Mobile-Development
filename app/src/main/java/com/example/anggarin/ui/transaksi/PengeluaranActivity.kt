@@ -1,4 +1,4 @@
-package com.studio.anggarin.ui.transaksi
+package com.example.anggarin.ui.transaksi
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
@@ -11,7 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.studio.anggarin.R
+import com.example.anggarin.R
 import java.util.Calendar
 
 class PengeluaranActivity : AppCompatActivity() {

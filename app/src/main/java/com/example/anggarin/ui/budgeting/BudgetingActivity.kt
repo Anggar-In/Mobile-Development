@@ -1,4 +1,4 @@
-package com.studio.anggarin.ui
+package com.example.anggarin.ui.budgeting
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.studio.anggarin.R
+import com.example.anggarin.R
 
 class BudgetingActivity : AppCompatActivity() {
     // Declare views for the form

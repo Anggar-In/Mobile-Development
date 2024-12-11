@@ -49,9 +49,6 @@
         android:layout_marginTop="452dp"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/hijau_tosca"
-        app:focusedStrokeColor="@color/hijau_tosca"
-        app:unfocusedStrokeColor="@color/hijau_tosca"
-        app:boxCornerRadius="20dp"
         app:boxStrokeWidth="2dp">
 
         <EditText

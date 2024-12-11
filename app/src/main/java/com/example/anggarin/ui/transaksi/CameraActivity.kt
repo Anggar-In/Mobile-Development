@@ -1,4 +1,4 @@
-package com.studio.anggarin.ui.transaksi
+package com.example.anggarin.ui.transaksi
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -7,7 +7,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.studio.anggarin.R
+import com.example.anggarin.R
 
 class CameraActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.studio.anggarin.ui
+package com.example.anggarin.ui.home
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.studio.anggarin.R
-import com.studio.anggarin.ui.transaksi.CameraActivity
-import com.studio.anggarin.ui.transaksi.PengeluaranActivity
+import com.example.anggarin.R
+import com.example.anggarin.ui.budgeting.BudgetingActivity
+import com.example.anggarin.ui.investasi.InvestasiActivity
+import com.example.anggarin.ui.profil.ProfilActivity
+import com.example.anggarin.ui.transaksi.CameraActivity
+import com.example.anggarin.ui.transaksi.PengeluaranActivity
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
@@ -26,6 +29,9 @@ class HomeActivity : AppCompatActivity() {
         val budgetingButton: ImageView = findViewById(R.id.img_add_budget)
         val addButton: ImageView = findViewById(R.id.img_add_plus)
         val cameraButton: ImageView = findViewById(R.id.img_camera)
+        val profilButton: ImageView = findViewById(R.id.btn_pindah_profil)
+        val investasiButton: ImageView = findViewById(R.id.img_btn_investasi)
+
 
         // Mengambil total pengeluaran dan menampilkannya
         val totalPengeluaran = sharedPreferences.getFloat("TotalPengeluaran", 0f)
@@ -44,6 +50,17 @@ class HomeActivity : AppCompatActivity() {
         budgetingButton.setOnClickListener {
             val intent = Intent(this, BudgetingActivity::class.java)
             startActivity(intent)
+        }
+
+        profilButton.setOnClickListener {
+            startActivity(Intent(this, ProfilActivity::class.java))
+            @Suppress("DEPRECATION")
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+        investasiButton.setOnClickListener {
+            startActivity(Intent(this, InvestasiActivity::class.java))
+            @Suppress("DEPRECATION")
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 }

@@ -1,203 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#123D36">
+    tools:context="com.example.anggarin.MainActivity">
 
-    <!-- Header -->
-    <TextView
-        android:id="@+id/tvSaldoTitle"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/iv_splash_screen"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="saldo"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
+        android:src="@drawable/splash_screen"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/tvSaldo"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_splash_screen_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rp. 0"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
+        android:text="@string/solusi_finansial_anda"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tvSaldoTitle"
+        app:layout_constraintTop_toBottomOf="@id/iv_splash_screen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Pengeluaran & Pemasukan -->
-    <LinearLayout
+    <TextView
+        android:id="@+id/txt_splash_screen_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvSaldo"
+        android:text="@string/teks_splash_screen"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_splash_screen_1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="#2D5952"
-            android:padding="8dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pengeluaran"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tvPengeluaran"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp.0"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="8dp"
-            android:layout_height="match_parent" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="#2D5952"
-            android:padding="8dp"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pemasukan"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tvPemasukan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp.0"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Menu Icons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvPengeluaran"
-        app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/btn_masuk_splash_screen"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button"
+        android:text="@string/masuk"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="NotSibling">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_report"
-            android:contentDescription="Laporan" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_invest"
-            android:contentDescription="Investasi" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_savings"
-            android:contentDescription="Tabungan" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_budget"
-            android:contentDescription="Anggaran" />
-    </LinearLayout>
-
-    <!-- Placeholder Transaction Section -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="#F4F4F4"
-        app:layout_constraintTop_toBottomOf="@id/tvPengeluaran">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Belum ada transaksi, "
-            android:textColor="#AAAAAA"
-            android:textSize="14sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Catat sekarang"
-            android:textColor="#34A89C"
-            android:textStyle="bold"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <!-- Navigation Buttons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="#123D36"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_camera_alt_24"
-            android:contentDescription="Camera" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_add_24"
-            android:contentDescription="Add Transaction" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:src="@drawable/baseline_mic_24"
-            android:contentDescription="Microphone" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

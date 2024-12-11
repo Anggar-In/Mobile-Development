@@ -12,7 +12,7 @@ import com.example.anggarin.ViewModelFactory
 import com.example.anggarin.data.Result
 import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.databinding.ActivityLoginBinding
-import com.example.anggarin.ui.profil.ProfilActivity
+import com.example.anggarin.ui.home.HomeActivity
 import com.example.anggarin.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.loginResult.observe(this) { result ->
             when (result) {
                 is Result.Result.Success -> {
-                    val intent = Intent(this, ProfilActivity::class.java).apply {
+                    val intent = Intent(this, HomeActivity::class.java).apply {
                         putExtra("EMAIL", binding.edtEmailLogin.text.toString().trim())
                     }
                     startActivity(intent)

@@ -1,5 +1,7 @@
-package com.studio.anggarin.ui
+package com.example.anggarin.ui.laporan
 
-class LaporanActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class LaporanActivity: AppCompatActivity() {
 
 }

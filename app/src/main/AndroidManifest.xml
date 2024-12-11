@@ -19,6 +19,30 @@
         android:theme="@style/Theme.AnggarIn"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.budgeting.BudgetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.laporan.LaporanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.AudioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.PemasukanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.PengeluaranActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.RiwayatTransaksi"
+            android:exported="false" />
+        <activity
             android:name=".ui.investasi.DetailInvestasiActivity"
             android:exported="false" >
         </activity>

@@ -1,4 +1,6 @@
-package com.studio.anggarin.ui.transaksi
+package com.example.anggarin.ui.transaksi
 
-class RiwayatTransaksi {
+import androidx.appcompat.app.AppCompatActivity
+
+class RiwayatTransaksi: AppCompatActivity() {
 }
