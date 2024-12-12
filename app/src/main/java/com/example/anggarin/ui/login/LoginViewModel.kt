@@ -12,6 +12,7 @@ import com.example.anggarin.data.remote.ApiConfig
 import com.example.anggarin.data.response.LoginRequest
 import com.example.anggarin.data.response.LoginResponse
 import kotlinx.coroutines.launch
+import java.net.UnknownHostException
 
 class LoginViewModel(private val pref: UserPreference) : ViewModel() {
     private val _loginResult = MutableLiveData<Result.Result<LoginResponse>>()
@@ -37,7 +38,7 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
                     // Simpan token jika tersedia
                     val token = loginResponse?.token
                     val name = loginResponse?.user?.name
-                    val email = loginResponse?.user?.email
+                    @Suppress("NAME_SHADOWING") val email = loginResponse?.user?.email
                     if (!token.isNullOrEmpty() && !name.isNullOrEmpty() && !email.isNullOrEmpty()) {
                         // Save token, name, and email to UserPreference
                         pref.saveToken(token)
@@ -58,7 +59,11 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
                         _loginResult.postValue(Result.Result.Error("Login gagal: $errorBody"))
                     }
                 }
-            } catch (e: Exception) {
+            }catch (e: UnknownHostException) {
+                Log.e("API_ERROR", "Hostname cannot be resolved: ${e.message}")
+                _loginResult.postValue(Result.Result.Error("Tidak dapat menghubungi server. Periksa koneksi atau coba lagi nanti."))
+            }catch (e: Exception) {
+                Log.e("API_ERROR", "Hostname cannot be resolved: ${e.message}")
                 _loginResult.postValue(Result.Result.Error("Error: ${e.localizedMessage}"))
             }
         }

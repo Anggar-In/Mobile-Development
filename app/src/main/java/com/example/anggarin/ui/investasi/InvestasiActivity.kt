@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.anggarin.R
 import com.example.anggarin.databinding.ActivityInvestasiBinding
+import com.example.anggarin.ui.home.HomeActivity
 
 class InvestasiActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -24,8 +25,14 @@ class InvestasiActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_mulai_investasi -> {
-                startActivity(Intent(this, InputInvestasiActivity::class.java))
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                val intent = Intent(this, InputInvestasiActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)  // Untuk membersihkan stack jika perlu
+                startActivity(intent)
+            }
+
+            R.id.img_btn_back_investasi -> {
+                startActivity(Intent(this, HomeActivity::class.java))
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
             }
         }
     }

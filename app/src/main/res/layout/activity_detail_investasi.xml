@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/img_btn_back_inputinvestasi"
+        android:id="@+id/img_btn_back_detailinvestasi"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_btn_back_inputinvestasi">
+        app:layout_constraintTop_toBottomOf="@id/img_btn_back_detailinvestasi">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,13 +54,6 @@
                 android:text="@string/nama_saham"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txt_sector_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sector"
-                android:textSize="11sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -76,66 +69,32 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txt_timestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:text="@string/timestamp"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/txt_low_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/lowprice"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/txt_lowprice1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price1"
                 android:textSize="11sp" />
 
             <TextView
-                android:id="@+id/txt_lowprice2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price2"
-                android:textSize="11sp" />
-
-            <TextView
+                android:id="@+id/txt_high_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/highprice"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:id="@+id/txt_highprice1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price1"
                 android:textSize="11sp" />
 
             <TextView
-                android:id="@+id/txt_highprice2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price2"
-                android:textSize="11sp" />
-
-            <TextView
+                android:id="@+id/txt_close_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/closeprice"
-                android:textSize="12sp"
-                android:layout_marginTop="20dp"/>
-
-            <TextView
-                android:id="@+id/txt_closeprice1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price1"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/txt_closeprice2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/price2"
                 android:textSize="11sp" />
 
             <View
@@ -156,13 +115,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/revenue"
-                android:textSize="11sp" />
-
-            <TextView
-                android:id="@+id/txt_grossprofit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/grossprofit"
                 android:textSize="11sp" />
 
             <TextView

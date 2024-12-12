@@ -95,4 +95,8 @@
     <string name="jangkainvestasi">Jangka investasi</string>
     <string name="budgeting">Budgeting</string>
     <string name="kategori">kategori</string>
+    <string name="ROI">ROI</string>
+    <string name="investasi_awal">Investasi awal</string>
+    <string name="target_return">Target Return</string>
+    <string name="timestamp">TimeStamp</string>
 </resources>
