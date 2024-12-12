@@ -2,6 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,8 +32,73 @@
         android:theme="@style/Theme.AnggarIn"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.budgeting.InputBudgetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.budgeting.BudgetingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.laporan.LaporanActivity"
+            android:exported="false" />
+        <activity android:name=".ui.transaksi.AudioActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.transaksi.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.PemasukanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.PengeluaranActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transaksi.RiwayatTransaksi"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investasi.DetailInvestasiActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".ui.investasi.HasilInvestasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investasi.InputInvestasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investasi.InvestasiActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.tabungan.DetailTabunganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.tabungan.InputTabunganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.tabungan.TabunganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profil.EditProfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profil.ProfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.VerifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

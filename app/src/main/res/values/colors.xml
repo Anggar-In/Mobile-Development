@@ -2,4 +2,23 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hijau_tosca">#2D957B</color>
+    <color name="abu_muda">#B9B7B7</color>
+    <color name="biru_sedang">#206EE3</color>
+    <color name="putih_abuabu">#D6D4D4</color>
+    <color name="merah">#DC4848</color>
+    <color name="hijau_tua">#1B4242</color>
+    <color name="hijau_muda">#73E8CB</color>
+    <color name="merah_muda">#FFC2C3</color>
+    <color name="hijau_lagi">#0E8388</color>
+    <color name="kuning">#F1C887</color>
+    <color name="white_opacity">#33FFFFFF</color>
+    <color name="hijau_mint">#A8E7D2</color>
+    <color name="garis">#CECECE</color>
+    <color name="date">#757575</color>
+    <color name="merah_opacity">#50DC1C1C</color>
+    <color name="hijau_opacity">#702D957B</color>
+    <color name="abutua">#737373</color>
+    <color name="abu">#ECECEC</color>
+
 </resources>

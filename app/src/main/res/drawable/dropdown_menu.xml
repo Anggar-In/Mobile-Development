@@ -1,0 +1,7 @@
+<!-- res/menu/dropdown_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_pemasukan"
+        android:title="Pemasukan" />
+    <!-- Kamu bisa menambahkan item lain di sini jika diperlukan -->
+</menu>

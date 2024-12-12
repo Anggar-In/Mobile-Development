@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:nestedScrollingEnabled="true"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pemasukan"/>
+
+    <LinearLayout
+        android:id="@+id/page_name"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="90dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            android:src="@drawable/baseline_arrow_back_ios_24">
+        </ImageView>
+        <TextView
+            android:layout_marginEnd="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Catat Transaksi">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tipe_transaksi"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/page_name">
+
+        <FrameLayout
+            android:id="@+id/btnPengeluaran"
+            android:layout_marginEnd="5dp"
+            android:layout_width="153dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/shape">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/pengeluaran_ic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="top"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Pengeluaran"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
+                <ImageView
+                    android:id="@+id/dropdownButton"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="centerInside"
+                    app:tint="@color/white"
+                    android:src="@drawable/baseline_keyboard_arrow_down_24" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnSelectDate"
+            android:layout_marginStart="5dp"
+            android:layout_width="143dp"
+            android:layout_height="32dp"
+            android:background="@drawable/shape"
+            android:layout_gravity="top|right">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Belum dipilih"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="15.89dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/baseline_calendar_month_24" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etNominal"
+        app:layout_constraintTop_toBottomOf="@+id/tipe_transaksi"
+        android:layout_marginVertical="100dp"
+        android:layout_marginHorizontal="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:hint="Rp.0"
+        android:inputType="number"
+        android:textColor="#FFFFFFFF"
+        android:textSize="36sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tempat_beli"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etNominal"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/hijau_tosca"
+        app:boxStrokeWidth="2dp">
+
+        <EditText
+            android:id="@+id/etTempatBeli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="10sp"
+            android:hint="Beli di mana?"
+            android:textColor="@color/abutua" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/item"
+        android:layout_marginHorizontal="30dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/tempat_beli"
+        android:layout_height="wrap_content"
+        app:hintEnabled="true"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/hijau_tosca"
+        app:boxStrokeWidth="2dp">
+
+        <EditText
+            android:id="@+id/etItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="10sp"
+            android:hint="Beli apa?"
+            android:textColor="@color/abutua"
+            android:textColorHint="@android:color/darker_gray" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/transaksi_kategori"
+        app:layout_constraintTop_toBottomOf="@+id/item"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="33dp"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Kategori transaksi"
+        android:textColor="#FF000000"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ikonkategori"
+        app:layout_constraintTop_toBottomOf="@id/transaksi_kategori"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/kategori1"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginLeft="31dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/border">
+
+            <TextView
+                android:id="@+id/kategori1Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="🛒 Belanja harian"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/kategori2"
+            android:layout_width="69.33dp"
+            android:layout_height="29dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/border">
+
+            <TextView
+                android:id="@+id/kategori2Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="🍕 Jajan"
+                android:textColor="#FF000000"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/kategori3"
+            android:layout_width="99dp"
+            android:layout_height="29dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/border">
+
+            <TextView
+                android:id="@+id/kategori3Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="🛒 Belanja bulanan"
+                android:textColor="#FF000000"
+                android:textSize="10sp" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/btnTambahKategori"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|right"
+            android:scaleType="centerInside"
+            android:src="@drawable/baseline_add_circle_outline_24" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSaveTransaction"
+        app:layout_constraintTop_toBottomOf="@+id/ikonkategori"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="49dp"
+        android:layout_gravity="top|left"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="31dp"
+        android:text="Catat Pengeluaran"
+        android:fontFamily="@font/poppins_regular"
+        android:background="@drawable/button_background"
+        android:scaleType="centerInside" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

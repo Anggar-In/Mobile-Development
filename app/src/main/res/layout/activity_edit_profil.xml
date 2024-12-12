@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_anggar"
+    android:orientation="vertical"
+    tools:context=".ui.profil.EditProfilActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_btn_back_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_arrow_back_ios_new_24"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/txt_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/edit_profile"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_edit_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="70dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_edit_profile"
+            app:shapeAppearanceOverlay="@style/circularImageView"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/img_btn_edit_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_edit"
+            app:layout_constraintBottom_toBottomOf="@id/img_edit_profile"
+            app:layout_constraintEnd_toEndOf="@id/img_edit_profile"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/img_edit_profile"
+            app:layout_constraintTop_toTopOf="@id/img_edit_profile"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="contentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_edit_profile">
+
+            <TextView
+                android:id="@+id/txt_nama_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt_nama_edit_profile"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:background="@drawable/backround_input"
+                android:hint="@string/masukkan_nama"
+                android:importantForAutofill="no"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_nama_edit_profile" />
+
+
+            <TextView
+                android:id="@+id/txt_email_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/email"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/edt_nama_edit_profile" />
+
+
+            <TextView
+                android:id="@+id/edt_email_edit_profile"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="@drawable/backround_input"
+                android:gravity="center_vertical"
+                android:hint="@string/masukkan_email"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_extralight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_email_edit_profile" />
+
+            <TextView
+                android:id="@+id/txt_nomorhp_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/nomor_hp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/edt_email_edit_profile" />
+
+            <EditText
+                android:id="@+id/edt_nomorhp_edit_profile"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:background="@drawable/backround_input"
+                android:hint="@string/masukkan_nomorhp"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_nomorhp_edit_profile" />
+
+            <TextView
+                android:id="@+id/txt_tgllahir_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/tanggal_lahir"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/edt_nomorhp_edit_profile" />
+
+            <EditText
+                android:id="@+id/edt_tgllahir_edit_profile"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/backround_input"
+                android:hint="@string/MM_DD_YY"
+                android:importantForAutofill="no"
+                android:inputType="none"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_tgllahir_edit_profile" />
+
+            <ImageView
+                android:id="@+id/btn_kalender"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="160dp"
+                android:src="@drawable/outline_calendar_month_24"
+                app:layout_constraintBottom_toBottomOf="@id/edt_tgllahir_edit_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/edt_tgllahir_edit_profile"
+                tools:ignore="contentDescription" />
+
+            <Button
+                android:id="@+id/btn_simpan_edit_profile"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="60dp"
+                android:text="@string/simpan"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:cornerRadius="13dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_tgllahir_edit_profile" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

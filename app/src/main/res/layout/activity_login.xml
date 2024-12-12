@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/img_btn_back_register"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:contentDescription="@string/button_panah"
+        android:src="@drawable/btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_anggarin_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/anggarin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <TextView
+        android:id="@+id/txt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txt_anggarin_register" />
+
+    <TextView
+        android:id="@+id/txt_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/email"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/txt_login" />
+
+        <EditText
+            android:id="@+id/edt_email_login"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:hint="@string/masukkan_email"
+            android:textSize="11sp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/backround_input"
+            android:layout_marginStart="40dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_email_login"/>
+
+    <TextView
+        android:id="@+id/txt_katasandi_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/kata_sandi"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/edt_email_login" />
+
+        <EditText
+            android:id="@+id/edt_katasandi_login"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:background="@drawable/backround_input"
+            android:textSize="11sp"
+            android:hint="@string/masukkan_kata_sandi"
+            android:inputType="textPassword"
+            android:layout_marginStart="40dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_katasandi_login"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/login"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        app:cornerRadius="13dp"
+        app:layout_constraintTop_toBottomOf="@id/edt_katasandi_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_belum_punya_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/belum_punya_akun"
+        android:textSize="11sp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    <TextView
+        android:id="@+id/txt_register_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_lah"
+        android:textColor="@color/biru_sedang"
+        android:textSize="11sp"
+        android:layout_marginStart="3dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        app:layout_constraintStart_toEndOf="@id/txt_belum_punya_akun"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
