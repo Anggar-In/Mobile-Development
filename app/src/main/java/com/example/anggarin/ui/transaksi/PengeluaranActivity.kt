@@ -155,7 +155,8 @@ class PengeluaranActivity : AppCompatActivity() {
                             items = items,
                         )
 
-                        val response = apiService.postExpense("Bearer$token", expenseRequest)
+                        val CategoryId = categoryId()
+                        val response = apiService.postExpense("Bearer$token", categoryId = CategoryId, expenseRequest)
                         if (response.isSuccessful && response.body() != null) {
                             Toast.makeText(
                                 this@PengeluaranActivity,
@@ -191,6 +192,10 @@ class PengeluaranActivity : AppCompatActivity() {
                 }
             }
         }
+
+    }
+
+    private fun categoryId(): Int {
 
     }
 

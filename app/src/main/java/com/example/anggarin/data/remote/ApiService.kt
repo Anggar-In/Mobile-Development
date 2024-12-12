@@ -101,6 +101,7 @@ interface ApiService {
     @POST("/expense")
     suspend fun postExpense(
         @Header("Authorization") token: String,
+        @Header("category_id") categoryId: Int,
         @Body expense: ExpenseRequest
     ): Response<ExpenseResponse>
 
