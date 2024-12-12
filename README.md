@@ -22,13 +22,10 @@ ANGGAR.IN MOBILE DEVELOPMENT DOCUMENTATION
 * (MD) A783B4KX1433 - Fathiya Salsabila - Institut Teknologi Sains dan Kesehatan PKU Muhammadiyah Surakarta
 * (MD) A133B4KY2721 - Muhammad Alvin Nugraha Sujana - Politeknik Negeri Samarinda
 
+
 ### Roles
+* login features, register, OTP verification, stock predictions, savings targets - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
 
->>> EDIT ROLE DIBAWAH DENGAN FORMAT YANG SAMA
-* Role - Nama (ID Bangkit)
-
-Contoh:
-* Audio Recognition (Income and Expense Tracking) - Muhamad Faqih Zacky (M312B4KY2631)
 
 # Anggar.In Mobile Development Project Explanation
 This project is our final project for Google Bangkit Academy 2024 Batch 2.
