@@ -10,6 +10,9 @@ import com.example.anggarin.R
 import com.example.anggarin.data.response.InvestmentPrediction
 import com.example.anggarin.data.response.InvestmentRecommendation
 import com.example.anggarin.databinding.ActivityDetailInvestasiBinding
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class DetailInvestasiActivity : AppCompatActivity() {
 
@@ -26,14 +29,14 @@ class DetailInvestasiActivity : AppCompatActivity() {
         val investment = intent.getParcelableExtra<InvestmentRecommendation>("investment")
 
         @Suppress("DEPRECATION")
-        val predictions = intent.getParcelableArrayListExtra<InvestmentPrediction>("investmentPrediction")
+        val predictions: List<InvestmentPrediction>? = intent.getParcelableArrayListExtra("investmentPrediction")
 
         // Log detailed information
         Log.d("DetailInvestasiActivity", "Investment: $investment")
         Log.d("DetailInvestasiActivity", "Predictions received: $predictions")
         Log.d("DetailInvestasiActivity", "Predictions size: ${predictions?.size}")
 
-
+        // Menampilkan data investasi
         investment?.let {
             binding.txtNamaSahamaDetail.text = it.stockCode
             binding.txtMarketCapDetail.text = "Market Cap: (${it.marketCap})"
@@ -48,24 +51,37 @@ class DetailInvestasiActivity : AppCompatActivity() {
             binding.txtPayoutRatio.text = "Payout Ratio: (${it.payoutRatio})"
         }
 
-        inputInvestasiViewModel.investmentPrediction.observe(this) { predictionList ->
-            Log.d("DetailInvestasiActivity", "Received prediction list: $predictionList")
-            predictionList?.let {
-                // Cek jika ada data dalam list
-                if (it.isNotEmpty()) {
-                    val prediction = it[0]  // Mengambil prediksi pertama dari list
-                    binding.txtTimestamp.text = prediction?.timestamp
-                    binding.txtLowPrice.text = prediction?.low
-                    binding.txtHighPrice.text = prediction?.high
-                    binding.txtClosePrice.text = prediction?.close
-                } else {
-                    // Tangani jika list kosong
-                    binding.txtTimestamp.text = "No prediction data available"
-                    binding.txtLowPrice.text = "No prediction data"
-                    binding.txtHighPrice.text = "No prediction data"
-                    binding.txtClosePrice.text = "No prediction data"
-                }
+        // Menampilkan data prediksi berdasarkan tanggal hari ini + 1
+        predictions?.let {
+            val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val todayPlusOne = Calendar.getInstance().apply {
+                add(Calendar.DATE, 1)
             }
+            val targetDate = sdf.format(todayPlusOne.time) // Tanggal target (hari ini + 1)
+
+            val predictionForTargetDate = it.find { prediction ->
+                prediction.timestamp.startsWith(targetDate)
+            }
+
+            if (predictionForTargetDate != null) {
+                // Prediksi ditemukan untuk tanggal target
+                binding.txtTimestamp.text = "Timestamp: ${predictionForTargetDate.timestamp}"
+                binding.txtLowPrice.text = "Low: ${predictionForTargetDate.low}"
+                binding.txtHighPrice.text = "High: ${predictionForTargetDate.high}"
+                binding.txtClosePrice.text = "Close: ${predictionForTargetDate.close}"
+            } else {
+                // Tidak ada prediksi untuk tanggal target
+                binding.txtTimestamp.text = "No prediction data available"
+                binding.txtLowPrice.text = "No prediction data"
+                binding.txtHighPrice.text = "No prediction data"
+                binding.txtClosePrice.text = "No prediction data"
+            }
+        } ?: run {
+            // Tangani jika tidak ada prediksi yang diterima
+            binding.txtTimestamp.text = "No prediction data available"
+            binding.txtLowPrice.text = "No prediction data"
+            binding.txtHighPrice.text = "No prediction data"
+            binding.txtClosePrice.text = "No prediction data"
         }
 
         binding.imgBtnBackDetailinvestasi.setOnClickListener {

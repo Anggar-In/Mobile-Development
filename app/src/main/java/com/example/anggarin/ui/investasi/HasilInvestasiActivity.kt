@@ -32,19 +32,24 @@ class HasilInvestasiActivity : AppCompatActivity() {
         // Mengambil targetReturn dari Intent
         val targetReturn = intent.getDoubleExtra("roi", 0.0)
 
-        // Inisialisasi adapter setelah mendapatkan targetReturn
         investasiAdapter = InvestasiAdapter(mutableListOf(), targetReturn) { investment ->
-            // Mendapatkan data prediction
+            // Menyiapkan intent dengan data investasi
             val intent = Intent(this, DetailInvestasiActivity::class.java)
             intent.putExtra("investment", investment) // Kirim data sebagai Parcelable
-            startActivity(intent)
 
+            // Mendapatkan data prediction
             val predictions = hasilInvestasiViewModel.investmentPredictions.value
             Log.d("HasilInvestasiActivity", "Predictions to pass: $predictions")
-            intent.putParcelableArrayListExtra("investmentPrediction",
-                ArrayList(predictions ?: emptyList())
-            )
 
+            // Pastikan predictions tidak null
+            if (predictions != null) {
+                intent.putParcelableArrayListExtra("investmentPrediction", ArrayList(predictions))
+            } else {
+                Log.d("HasilInvestasiActivity", "Predictions are null")
+            }
+
+            // Mulai DetailInvestasiActivity setelah semua data siap
+            startActivity(intent)
         }
 
         binding.rvInvestasi.apply {
