@@ -23,8 +23,8 @@ import com.example.anggarin.data.response.UpdateProfileRequest
 import com.example.anggarin.data.response.UpdateProfileResponse
 import com.example.anggarin.data.response.VerifikasiOtpRequest
 import com.example.anggarin.data.response.VerifikasiOtpResponse
-
 import com.example.anggarin.data.response.VoiceInputRequest
+
 import com.example.anggarin.data.response.VoiceInputResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
@@ -162,10 +162,8 @@ interface ApiService {
     @POST("/voice-input")
     fun submitVoiceInput(
         @Header("Authorization") token: String,
-        @Header("category_id") categoryId: String,
-        @Body request: VoiceInputRequest
+        @Header("category_id") categoryId: VoiceInputRequest // Mengirimkan category_id sebagai header
     ): Response<VoiceInputResponse>
-
 }
 
 

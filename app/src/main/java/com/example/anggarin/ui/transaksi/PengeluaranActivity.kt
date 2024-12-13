@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -49,7 +50,7 @@ class PengeluaranActivity : AppCompatActivity() {
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
     private lateinit var editTextNominal: EditText
-    private lateinit var buttonSelectDate: ImageView
+    private lateinit var buttonSelectDate: FrameLayout
     private lateinit var textViewDate: TextView
     private lateinit var buttonSaveTransaction: Button
 

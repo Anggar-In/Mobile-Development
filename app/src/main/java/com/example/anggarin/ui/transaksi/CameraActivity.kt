@@ -1,7 +1,6 @@
 package com.example.anggarin.ui.transaksi
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
@@ -10,13 +9,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.anggarin.R
 import com.example.anggarin.data.pref.UserPreference
 import com.example.anggarin.data.remote.ApiConfig
-import com.example.anggarin.data.remote.ApiService
 import com.example.anggarin.data.response.BudgetRequest
 import com.example.anggarin.databinding.ActivityCameraBinding
 import com.example.anggarin.ui.login.LoginActivity
@@ -25,7 +22,6 @@ import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import org.json.JSONObject
 import java.io.File
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -46,16 +42,8 @@ class CameraActivity : AppCompatActivity() {
         // Menyiapkan Executor untuk thread kamera
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        // Memeriksa izin kamera
-        if (allPermissionsGranted()) {
-            startCamera()
-        } else {
-            ActivityCompat.requestPermissions(
-                this,
-                REQUIRED_PERMISSIONS,
-                REQUEST_CODE_PERMISSIONS
-            )
-        }
+        // Langsung mulai kamera tanpa pemeriksaan izin
+        startCamera()
 
         binding.captureButton.setOnClickListener {
             Log.d("CameraActivity", "Capture button clicked")
@@ -98,26 +86,6 @@ class CameraActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
-        ContextCompat.checkSelfPermission(
-            baseContext, it
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<String>, grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_PERMISSIONS) {
-            if (allPermissionsGranted()) {
-                startCamera()
-            } else {
-                Toast.makeText(this, "Permissions not granted by the user.", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-        }
-    }
-
     private fun captureImage(imageCapture: ImageCapture) {
         // Tempat file untuk menyimpan gambar
         val photoFile = File(
@@ -150,60 +118,53 @@ class CameraActivity : AppCompatActivity() {
         val userPreference = UserPreference(applicationContext)
 
         lifecycleScope.launch {
-            val token = userPreference.getToken().first()
-            Log.d("LoginActivity", "Token yang disimpan: $token")
+            val token = userPreference.getToken().first() // Ambil token dari penyimpanan
+            if (token.isNullOrEmpty()) {
+                Toast.makeText(this@CameraActivity, "Token tidak valid, silakan login kembali.", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@CameraActivity, LoginActivity::class.java))
+                finish()
+                return@launch
+            }
 
-            if (!token.isNullOrEmpty()) {
-                val requestFile = photoFile.asRequestBody("image/jpg".toMediaTypeOrNull())
+            try {
+                // Buat request body
+                val requestFile = photoFile.asRequestBody("image/jpeg".toMediaTypeOrNull())
                 val imagePart = MultipartBody.Part.createFormData("receipt", photoFile.name, requestFile)
 
+                // Ambil instance API service
                 val apiService = ApiConfig.getApiService(applicationContext)
 
-                try {
-                    // Upload gambar
-                    val response = apiService.uploadReceipt("Bearer$token", imagePart)
+                // Kirim request ke server
+                val response = apiService.uploadReceipt("Bearer $token", imagePart)
 
-                    if (response.isSuccessful && response.body() != null) {
-                        val receiptResponse = response.body()?.toString()  // Convert body to string
-                        val json = JSONObject(receiptResponse)
+                if (response.isSuccessful && response.body() != null) {
+                    val responseBody = response.body()!!
 
-                        val extractedText = json.getString("extracted_text")
-                        val company = json.getJSONObject("parsed_receipt").getString("company")
-                        val total = json.getJSONObject("parsed_receipt").getString("total")
-                        val items = json.getJSONObject("parsed_receipt").getJSONArray("items")
+                    // Proses respons server
+                    val extractedText = responseBody.extractedText // Contoh respons
+                    val company = responseBody.parsedReceipt?.company
+                    val total = responseBody.parsedReceipt?.total
+                    val items = responseBody.parsedReceipt?.items
 
-                        // Kirim data ke PengeluaranActivity
-                        val intent = Intent(this@CameraActivity, PengeluaranActivity::class.java).apply {
-                            putExtra("EXTRACTED_TEXT", extractedText)
-                            putExtra("COMPANY", company)
-                            putExtra("TOTAL", total)
-                            putExtra("ITEMS", items.join(", "))
-                        }
-                        startActivity(intent)
-                    } else {
-                        // Tangani kesalahan jika respons gagal
-                        val errorBody = response.errorBody()?.string()
-                        Log.e("CameraActivity", "Error: $errorBody")
-                        Toast.makeText(
-                            this@CameraActivity,
-                            "Gagal mengupload receipt: $errorBody",
-                            Toast.LENGTH_LONG
-                        ).show()
+                    // Lanjutkan ke activity lain
+                    val intent = Intent(this@CameraActivity, PengeluaranActivity::class.java).apply {
+                        putExtra("EXTRACTED_TEXT", extractedText)
+                        putExtra("COMPANY", company)
+                        putExtra("TOTAL", total)
+                        putExtra("ITEMS", items.toString())
                     }
-                } catch (e: Exception) {
-                    Toast.makeText(this@CameraActivity, "Terjadi kesalahan: ${e.message}", Toast.LENGTH_LONG).show()
+                    startActivity(intent)
+                } else {
+                    val errorBody = response.errorBody()?.string()
+                    Log.e("CameraActivity", "Error uploading receipt: $errorBody")
+                    Toast.makeText(this@CameraActivity, "Upload gagal: $errorBody", Toast.LENGTH_LONG).show()
                 }
-            } else {
-                // Token tidak valid atau kosong
-                Toast.makeText(this@CameraActivity, "Token tidak valid atau hilang. Silakan login kembali.", Toast.LENGTH_SHORT).show()
-                // Redirect ke halaman login
-                val intent = Intent(this@CameraActivity, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
+            } catch (e: Exception) {
+                Log.e("CameraActivity", "Upload error", e)
+                Toast.makeText(this@CameraActivity, "Terjadi kesalahan: ${e.message}", Toast.LENGTH_LONG).show()
             }
         }
     }
-
 
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 10
