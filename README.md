@@ -65,7 +65,7 @@ How to install this application:
 
 2. then run the application in android studio
 
-
+3. make sure your internet is on and stable
 
 
 # Other Path Documentation 
