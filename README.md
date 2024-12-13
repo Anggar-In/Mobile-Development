@@ -30,6 +30,12 @@ ANGGAR.IN MOBILE DEVELOPMENT DOCUMENTATION
 * stock predictions features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
 * savings targets features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
 
+* ### Roles
+* Home features - Fathiya Salsabila (A783B4KX1433)
+* Transaction features -  Fathiya Salsabila (A783B4KX1433)
+* Budgeting features -  Fathiya Salsabila (A783B4KX1433)
+* OCR and Audio Input features -  Fathiya Salsabila (A783B4KX1433)
+
 
 # Anggar.In Mobile Development Project Explanation
 This project is our final project for Google Bangkit Academy 2024 Batch 2.
