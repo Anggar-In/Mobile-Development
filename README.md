@@ -24,7 +24,11 @@ ANGGAR.IN MOBILE DEVELOPMENT DOCUMENTATION
 
 
 ### Roles
-* login features, register, OTP verification, stock predictions, savings targets - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* login features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* register features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* OTP verification features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* stock predictions features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* savings targets features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
 
 
 # Anggar.In Mobile Development Project Explanation
@@ -49,7 +53,14 @@ from the beginning our team created a project theme about a transaction recordin
 
 
 # How to Use The Code
->>ISI HOW TO USE CODE DISINI, UNTUK CONTOHNYA BISA BUKA REPO ML/CC
+
+Requirement:
+1. Android studio
+2. Internet Network
+3. min sdk 24 (android 7)
+
+How to install this application:
+1. download the code in zip form from the github repository or 
 
 # Other Path Documentation 
 **Cloud Computing:**
