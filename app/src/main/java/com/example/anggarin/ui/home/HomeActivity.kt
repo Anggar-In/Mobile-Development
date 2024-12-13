@@ -16,14 +16,23 @@ import com.example.anggarin.ui.transaksi.CameraActivity
 import com.example.anggarin.ui.transaksi.PemasukanActivity
 import com.example.anggarin.ui.transaksi.PengeluaranActivity
 
+
+
+
 class HomeActivity : AppCompatActivity() {
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var saldoPengeluaranTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_home) // Layout yang sudah Anda buat sebelumnya
 
+        // Inisialisasi SharedPreferences
+        sharedPreferences = getSharedPreferences("FinanceApp", MODE_PRIVATE)
 
         // Menemukan elemen UI
+        saldoPengeluaranTextView = findViewById(R.id.saldoPengeluaran)
+
         val microphoneButton: ImageView = findViewById(R.id.img_microphone)
         val budgetingButton: ImageView = findViewById(R.id.img_add_budget)
         val addButton: ImageView = findViewById(R.id.img_add_plus)
@@ -37,6 +46,10 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+
+        // Mengambil total pengeluaran dan menampilkannya
+        val totalPengeluaran = sharedPreferences.getFloat("TotalPengeluaran", 0f)
+        saldoPengeluaranTextView.text = "Rp. $totalPengeluaran"
 
         cameraButton.setOnClickListener {
             val intent = Intent(this, CameraActivity::class.java)

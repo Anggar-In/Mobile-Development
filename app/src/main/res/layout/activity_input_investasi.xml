@@ -8,140 +8,140 @@
     android:layout_height="match_parent"
     tools:context=".ui.investasi.InputInvestasiActivity">
 
-    <ImageView
-        android:id="@+id/img_btn_back_inputinvestasi"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/baseline_arrow_back_ios_new_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentdescription" />
+        <ImageView
+            android:id="@+id/img_btn_back_inputinvestasi"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="contentdescription" />
 
-    <TextView
-        android:id="@+id/txt_investasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="@string/hitung_investasi"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txt_investasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:text="@string/hitung_investasi"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_pengeluaran_tahunan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pengeluaran_tahunan"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        app:layout_constraintTop_toBottomOf="@id/img_btn_back_inputinvestasi"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/txt_pengeluaran_tahunan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pengeluaran_tahunan"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="90dp"
+            app:layout_constraintTop_toBottomOf="@id/img_btn_back_inputinvestasi"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edt_input_pengeluaran_tahunan"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:textSize="12sp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:labelFor="@id/edt_input_pengeluaran_tahunan"
-        android:importantForAccessibility="no"
-        android:importantForAutofill="no"
-        android:background="@drawable/backround_input"
-        app:layout_constraintTop_toBottomOf="@id/txt_pengeluaran_tahunan"
-        app:layout_constraintStart_toStartOf="@id/txt_pengeluaran_tahunan" />
+        <EditText
+            android:id="@+id/edt_input_pengeluaran_tahunan"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:textSize="12sp"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:labelFor="@id/edt_input_pengeluaran_tahunan"
+            android:importantForAccessibility="no"
+            android:importantForAutofill="no"
+            android:background="@drawable/backround_input"
+            app:layout_constraintTop_toBottomOf="@id/txt_pengeluaran_tahunan"
+            app:layout_constraintStart_toStartOf="@id/txt_pengeluaran_tahunan" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Rp"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@id/edt_input_pengeluaran_tahunan"
-        app:layout_constraintTop_toTopOf="@id/edt_input_pengeluaran_tahunan"
-        app:layout_constraintBottom_toBottomOf="@id/edt_input_pengeluaran_tahunan"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Rp"
+            android:textSize="12sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/edt_input_pengeluaran_tahunan"
+            app:layout_constraintTop_toTopOf="@id/edt_input_pengeluaran_tahunan"
+            app:layout_constraintBottom_toBottomOf="@id/edt_input_pengeluaran_tahunan"/>
 
-    <TextView
-        android:id="@+id/txt_dana_kebebasan_finansial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dana_kebebasan_finansial"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/edt_input_pengeluaran_tahunan"
-        app:layout_constraintStart_toStartOf="@id/edt_input_pengeluaran_tahunan" />
+        <TextView
+            android:id="@+id/txt_investasi_awal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/investasi_awal"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/edt_input_pengeluaran_tahunan"
+            app:layout_constraintStart_toStartOf="@id/edt_input_pengeluaran_tahunan" />
 
-    <EditText
-        android:id="@+id/edt_input_dana_kebebasan_finansial"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:textSize="12sp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:labelFor="@id/edt_input_dana_kebebasan_finansial"
-        android:importantForAccessibility="no"
-        android:importantForAutofill="no"
-        android:background="@drawable/backround_input"
-        app:layout_constraintTop_toBottomOf="@id/txt_dana_kebebasan_finansial"
-        app:layout_constraintStart_toStartOf="@id/txt_dana_kebebasan_finansial"
-        />
+        <EditText
+            android:id="@+id/edt_input_investasiawal"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:textSize="12sp"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:labelFor="@id/edt_input_investasiawal"
+            android:importantForAccessibility="no"
+            android:importantForAutofill="no"
+            android:background="@drawable/backround_input"
+            app:layout_constraintTop_toBottomOf="@id/txt_investasi_awal"
+            app:layout_constraintStart_toStartOf="@id/txt_investasi_awal"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Rp"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@id/edt_input_dana_kebebasan_finansial"
-        app:layout_constraintTop_toTopOf="@id/edt_input_dana_kebebasan_finansial"
-        app:layout_constraintBottom_toBottomOf="@id/edt_input_dana_kebebasan_finansial"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Rp"
+            android:textSize="12sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/edt_input_investasiawal"
+            app:layout_constraintTop_toTopOf="@id/edt_input_investasiawal"
+            app:layout_constraintBottom_toBottomOf="@id/edt_input_investasiawal"/>
 
-    <TextView
-        android:id="@+id/txt_jangkainvestasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jangkainvestasi"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/edt_input_dana_kebebasan_finansial"
-        app:layout_constraintStart_toStartOf="@id/edt_input_dana_kebebasan_finansial" />
+        <TextView
+            android:id="@+id/txt_jangkainvestasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jangkainvestasi"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/edt_input_investasiawal"
+            app:layout_constraintStart_toStartOf="@id/edt_input_investasiawal" />
 
-    <EditText
-        android:id="@+id/edt_jangkainvestasi"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:textSize="12sp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:labelFor="@id/edt_input_dana_kebebasan_finansial"
-        android:importantForAccessibility="no"
-        android:importantForAutofill="no"
-        android:background="@drawable/backround_input"
-        app:layout_constraintTop_toBottomOf="@id/txt_jangkainvestasi"
-        app:layout_constraintStart_toStartOf="@id/txt_jangkainvestasi"
-        />
+        <EditText
+            android:id="@+id/edt_jangkainvestasi"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:textSize="12sp"
+            android:inputType="number"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:labelFor="@id/edt_jangkainvestasi"
+            android:importantForAccessibility="no"
+            android:importantForAutofill="no"
+            android:background="@drawable/backround_input"
+            app:layout_constraintTop_toBottomOf="@id/txt_jangkainvestasi"
+            app:layout_constraintStart_toStartOf="@id/txt_jangkainvestasi"
+            />
 
-    <Button
-        android:id="@+id/btn_hitung_investasi"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:text="@string/hitung_investasi"
-        android:textSize="16sp"
-        app:cornerRadius="15dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
+            android:id="@+id/btn_hitung_investasi"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:text="@string/hitung_investasi"
+            android:textSize="16sp"
+            app:cornerRadius="15dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.espresso.core)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -86,13 +87,11 @@ dependencies {
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
 
-    //camera
-    dependencies {
-        implementation (libs.androidx.camera.camera2.v120)
-        implementation (libs.androidx.camera.lifecycle.v120)
-        implementation (libs.androidx.camera.view)
-    }
+    implementation (libs.androidx.camera.camera2.v120)
+    implementation (libs.androidx.camera.lifecycle.v120)
+    implementation (libs.androidx.camera.view)
 
 
+    
 
 }

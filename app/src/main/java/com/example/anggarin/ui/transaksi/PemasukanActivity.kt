@@ -15,6 +15,5 @@ class PemasukanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_pemasukan)// Layout untuk PemasukanActivity
 
-
     }
 }

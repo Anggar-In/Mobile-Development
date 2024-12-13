@@ -4,14 +4,13 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.FrameLayout
 import android.widget.Button
 import android.widget.EditText
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -35,10 +34,8 @@ class PengeluaranActivity : AppCompatActivity() {
 
 
 
-    private lateinit var editTextNominal: EditText
-    private lateinit var buttonSelectDate: FrameLayout
-    private lateinit var textViewDate: TextView
-    private lateinit var buttonSaveTransaction: Button
+
+
     private lateinit var editTextTempatBeli: EditText
     private lateinit var editTextItem: EditText
 
@@ -48,11 +45,16 @@ class PengeluaranActivity : AppCompatActivity() {
     private lateinit var kategori1Name: TextView
     private lateinit var kategori2Name: TextView
     private lateinit var kategori3Name: TextView
-
-    private var selectedDate: String? = null
     private var selectedCategory: String? = null // Menyimpan kategori yang dipilih
 
     @SuppressLint("MissingInflatedId", "CutPasteId")
+    private lateinit var editTextNominal: EditText
+    private lateinit var buttonSelectDate: ImageView
+    private lateinit var textViewDate: TextView
+    private lateinit var buttonSaveTransaction: Button
+
+    private var selectedDate: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_pengeluaran)
@@ -229,5 +231,6 @@ class PengeluaranActivity : AppCompatActivity() {
         }
     }
 }
+
 
 

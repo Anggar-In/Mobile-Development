@@ -89,6 +89,9 @@ class EditProfilActivity : AppCompatActivity() {
 //            @Suppress("DEPRECATION")
 //            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
 //            Toast.makeText(this, "data kamu tersimpan", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ProfilActivity::class.java))
+            @Suppress("DEPRECATION")
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
 
 

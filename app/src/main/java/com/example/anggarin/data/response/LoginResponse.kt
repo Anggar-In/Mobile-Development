@@ -17,7 +17,6 @@ data class LoginResponse(
 
 )
 
-
 data class User(
     @field:SerializedName("name") val name: String,
     @field:SerializedName("email") val email: String

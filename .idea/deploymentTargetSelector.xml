@@ -5,7 +5,11 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+<<<<<<< HEAD
       <SelectionState runConfigName="PengeluaranActivity">
+=======
+      <SelectionState runConfigName="LoginActivity">
+>>>>>>> 1782b3a2aa43aa1381db43e78814ec8f8b8ed0c6
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
