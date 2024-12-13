@@ -60,7 +60,13 @@ Requirement:
 3. min sdk 24 (android 7)
 
 How to install this application:
-1. download the code in zip form from the github repository or 
+1. download the code in zip form from the github repository or git clone the repository from your local git
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/5da2900d-8758-4297-a107-73490239ade5" />
+
+2. then run the application in android studio
+
+
+
 
 # Other Path Documentation 
 **Cloud Computing:**
