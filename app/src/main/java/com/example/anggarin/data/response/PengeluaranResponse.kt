@@ -15,6 +15,7 @@ data class ExpenseRequest(
 
     @field:SerializedName("items")
     val items: List<String>
+
 )
 
 data class ExpenseResponse(

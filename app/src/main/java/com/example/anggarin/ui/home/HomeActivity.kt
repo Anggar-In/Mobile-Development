@@ -13,6 +13,7 @@ import com.example.anggarin.ui.investasi.InvestasiActivity
 import com.example.anggarin.ui.profil.ProfilActivity
 import com.example.anggarin.ui.transaksi.AudioActivity
 import com.example.anggarin.ui.transaksi.CameraActivity
+import com.example.anggarin.ui.transaksi.PemasukanActivity
 import com.example.anggarin.ui.transaksi.PengeluaranActivity
 
 class HomeActivity : AppCompatActivity() {

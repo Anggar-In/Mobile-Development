@@ -148,15 +148,33 @@ class PengeluaranActivity : AppCompatActivity() {
                     }
 
                     try {
+                        val category_id = when (selectedCategory) {
+                            kategori1Name.text.toString() -> "Makanan"
+                            kategori2Name.text.toString() -> "Transportasi"
+                            kategori3Name.text.toString() -> "Lainnya"
+                            else -> null // Jika kategori tidak dipilih
+                        }
+
+                        Log.d("PengeluaranActivity", "Category ID: $category_id")
+
+
+                        if (category_id == null) {
+                            Toast.makeText(
+                                this@PengeluaranActivity,
+                                "Harap pilih kategori",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            return@launch
+                        }
+
                         val expenseRequest = ExpenseRequest(
                             expenseAmount = expenseAmount,
                             expenseDate = expenseDate,
                             store = store,
                             items = items,
                         )
-
-                        val CategoryId = categoryId()
-                        val response = apiService.postExpense("Bearer$token", categoryId = CategoryId, expenseRequest)
+                        val response = apiService.postExpense("Bearer$token",
+                            category_id.toString(), expenseRequest)
                         if (response.isSuccessful && response.body() != null) {
                             Toast.makeText(
                                 this@PengeluaranActivity,
@@ -195,9 +213,6 @@ class PengeluaranActivity : AppCompatActivity() {
 
     }
 
-    private fun categoryId(): Int {
-
-    }
 
     // Fungsi untuk memperbarui status kategori yang dipilih
     private fun updateCategorySelection() {

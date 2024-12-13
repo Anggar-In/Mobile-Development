@@ -17,7 +17,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.datastore.core.IOException
+import androidx.lifecycle.lifecycleScope
 import com.example.anggarin.R
+import com.example.anggarin.data.pref.UserPreference
+import com.example.anggarin.data.remote.ApiConfig
+import com.example.anggarin.data.response.BudgetRequest
+import com.example.anggarin.data.response.VoiceInputRequest
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType
@@ -35,9 +42,6 @@ class AudioActivity : AppCompatActivity() {
     private lateinit var speechRecognizer: SpeechRecognizer
     private lateinit var tvTranscription: TextView
     private val REQUEST_RECORD_AUDIO_PERMISSION = 1
-    private val token = "your_token_here"
-    private val categoryId = "your_category_id"
-    private val apiUrl = "https://your-cloud-api.com/voice-input" // Ganti dengan URL API kamu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -103,38 +107,50 @@ class AudioActivity : AppCompatActivity() {
         // Membuat request body yang sesuai dengan format JSON
         val requestBody = json.toString().toRequestBody("application/json".toMediaType())
 
-        // Membuat request dengan builder
-        val request = Request.Builder()
-            .url(apiUrl)  // Pastikan URL yang digunakan sudah benar
-            .post(requestBody)  // Menggunakan metode POST dengan body yang telah dibuat
-            .addHeader("Authorization", "Bearer $token")  // Ganti dengan token yang sesuai
-            .addHeader("category_id", categoryId)  // Ganti dengan category ID yang sesuai
-            .build()
+        // Ambil token dari UserPreference
+        val userPreference = UserPreference(applicationContext)
 
-        // Menjalankan request
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
+        lifecycleScope.launch {
+            val token = userPreference.getToken().first()
+
+            if (!token.isNullOrEmpty()) {
+
+                val voiceRequest = VoiceInputRequest(fullTranscriptText)
+                val apiService = ApiConfig.getApiService(this@AudioActivity) // Menggunakan API yang sudah ada di ApiConfig
+
+                // Membuat request untuk voice input
+                try {
+                    val response = apiService.submitVoiceInput("Bearer$token", voiceRequest)
+
+                    if (response.isSuccessful && response.body() != null) {
+                        runOnUiThread {
+                            val responseBody = response.body()!!
+                            val incomeId = responseBody.incomeId
+                            Toast.makeText(applicationContext, "Income recorded: $incomeId", Toast.LENGTH_SHORT).show()
+
+                            // Pindah ke activity Pengeluaran
+                            val intent = Intent(this@AudioActivity, PengeluaranActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    } else {
+                        runOnUiThread {
+                            Toast.makeText(applicationContext, "Gagal mengirimkan data", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } catch (e: Exception) {
+                    runOnUiThread {
+                        Toast.makeText(applicationContext, "Terjadi kesalahan: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
                 runOnUiThread {
-                    Toast.makeText(applicationContext, "Failed to send request", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Token tidak ditemukan. Silakan login ulang.", Toast.LENGTH_SHORT).show()
                 }
             }
-
-            override fun onResponse(call: Call, response: Response) {
-                if (response.isSuccessful) {
-                    runOnUiThread {
-                        val responseBody = response.body?.string()
-                        val responseJson = JSONObject(responseBody)
-                        val incomeId = responseJson.getString("income_id")
-                        Toast.makeText(applicationContext, "Income recorded: $incomeId", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    runOnUiThread {
-                        Toast.makeText(applicationContext, "Error: ${response.message}", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        })
+        }
     }
+
 
 
     // Menangani izin
