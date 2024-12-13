@@ -22,13 +22,20 @@ ANGGAR.IN MOBILE DEVELOPMENT DOCUMENTATION
 * (MD) A783B4KX1433 - Fathiya Salsabila - Institut Teknologi Sains dan Kesehatan PKU Muhammadiyah Surakarta
 * (MD) A133B4KY2721 - Muhammad Alvin Nugraha Sujana - Politeknik Negeri Samarinda
 
+
 ### Roles
+* login features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* register features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* OTP verification features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* stock predictions features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
+* savings targets features - Muhammad Alvin Nugraha Sujana (A133B4KY2721)
 
->>> EDIT ROLE DIBAWAH DENGAN FORMAT YANG SAMA
-* Role - Nama (ID Bangkit)
+* ### Roles
+* Home features - Fathiya Salsabila (A783B4KX1433)
+* Transaction features -  Fathiya Salsabila (A783B4KX1433)
+* Budgeting features -  Fathiya Salsabila (A783B4KX1433)
+* OCR and Audio Input features -  Fathiya Salsabila (A783B4KX1433)
 
-Contoh:
-* Audio Recognition (Income and Expense Tracking) - Muhamad Faqih Zacky (M312B4KY2631)
 
 # Anggar.In Mobile Development Project Explanation
 This project is our final project for Google Bangkit Academy 2024 Batch 2.
@@ -44,15 +51,28 @@ Leveraging machine learning, cloud computing, and mobile technology, Anggar.In a
 
 **Mobile Development:** 
 
->>EDIT TEKS DIBAWAH INI DENGAN BACKGROUNDER MOBILE DEVELOPMENT DI PROJECT BRIEF
+from the beginning our team created a project theme about a transaction recording application, then we as mobile developers, first created a UI/UX design using figma from the application, then discussed with the team whether they agreed with the design. Then after the UI design was completed, we created a prototype as the application flow runs on the device later. Then after that we implemented the UI into the application using Android Studio using XML. Then after the machine learning team finished creating the model, then the cloud computing team created the API to be given to the mobile development team. We immediately integrated the API using the retrofit library from Android, which means that this application is used online using the internet.
 
-In the Machine Learning path, we developed several features, starting with our MVP [stock prediction](https://github.com/Anggar-In/Machine-Learning/tree/main/stock_price_predictions) and [recommendation models](https://github.com/Anggar-In/Machine-Learning/tree/main/stockRecommendation)  for a financial freedom calculator. These models utilize TensorFlow, are saved using TensorFlow.js for web deployment, preprocess data using Min-Max Scaler for normalization, and apply time series forecasting for stock price prediction alongside linear regression for stock recommendations. Beyond the MVP, we also building supplementary features beyond the MVP, such as [Receipt OCR](https://github.com/Anggar-In/Machine-Learning/tree/main/Receipt_OCR) and [Audio Recognition](https://github.com/Anggar-In/Machine-Learning/tree/main/AudioRecognition). The Receipt OCR leverages the Pytesseract library for extracting text from images, while the Audio Recognition feature utilizes the WebSpeech API. Both systems are tuned with preprocessing techniques for image or audio and use regex for data extraction. This feature is useful for automating expense and income tracking.
 
 # Screenshots App
->>TAMBAHKAN SCREENSHOTS APP DISINI
+![WhatsApp Image 2024-12-13 at 07 09 10](https://github.com/user-attachments/assets/94921c86-aff5-4db6-b5c1-045a7ccdf94c)
+
 
 # How to Use The Code
->>ISI HOW TO USE CODE DISINI, UNTUK CONTOHNYA BISA BUKA REPO ML/CC
+
+Requirement:
+1. Android studio
+2. Internet Network
+3. min sdk 24 (android 7)
+
+How to install this application:
+1. download the code in zip form from the github repository or git clone the repository from your local git
+<img width="671" alt="image" src="https://github.com/user-attachments/assets/5da2900d-8758-4297-a107-73490239ade5" />
+
+2. then run the application in android studio
+
+3. make sure your internet is on and stable
+
 
 # Other Path Documentation 
 **Cloud Computing:**
